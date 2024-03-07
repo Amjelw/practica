@@ -2,8 +2,8 @@ object Form5: TForm5
   Left = 0
   Top = 0
   Caption = 'Calculo Amortizacion'
-  ClientHeight = 387
-  ClientWidth = 581
+  ClientHeight = 407
+  ClientWidth = 584
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clBlack
@@ -19,8 +19,8 @@ object Form5: TForm5
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 581
-    Height = 387
+    Width = 584
+    Height = 407
     Align = alClient
     Caption = 'Panel1'
     Color = clActiveCaption
@@ -32,9 +32,6 @@ object Form5: TForm5
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 32
-    ExplicitWidth = 584
-    ExplicitHeight = 407
     object Label4: TLabel
       Left = 47
       Top = 356
@@ -209,7 +206,7 @@ object Form5: TForm5
     Indexes = <>
     SortOptions = []
     SortedField = 'Capital'
-    Left = 520
+    Left = 480
     Top = 64
     object TBDATACapital: TCurrencyField
       FieldName = 'Capital'
@@ -232,7 +229,7 @@ object Form5: TForm5
   end
   object dsCon: TDataSource
     DataSet = TBDATA
-    Left = 520
+    Left = 480
     Top = 16
   end
 end

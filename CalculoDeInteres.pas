@@ -11,54 +11,17 @@ uses
   cxDateNavigator, Vcl.ComCtrls, dxCore, cxDateUtils, cxCalendar, cxCustomData,
   cxFilter, cxData, cxDataStorage, cxNavigator, Data.DB, cxDBData,
   cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel,
-  cxClasses, cxGridCustomView, cxGrid, dxmdaset, cxButtonEdit;
+  cxClasses, cxGridCustomView, cxGrid, dxmdaset, cxButtonEdit, Vcl.Buttons;
 
 type
   TFormImpuestos = class(TForm)
     Panel1: TPanel;
     Panel2: TPanel;
-    GroupBox1: TGroupBox;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
-    cxDateEdit1: TcxDateEdit;
-    Edit1: TEdit;
-    cxCalcEdit1: TcxCalcEdit;
-    Label4: TLabel;
-    TBFactura: TdxMemData;
-    DATASFACTURACION: TDataSource;
-    cxGrid1DBTableView1: TcxGridDBTableView;
-    cxGrid1Level1: TcxGridLevel;
-    cxGrid1: TcxGrid;
-    TBFacturaCANTIDAD: TIntegerField;
-    TBFacturaDESCRIPCION: TStringField;
-    TBFacturaPRECIOUNITARIO: TCurrencyField;
-    TBFacturaEXTENTAS: TCurrencyField;
-    TBFacturaIVA: TStringField;
-    TBFacturaIVACINCO: TStringField;
-    cxGrid1DBTableView1RecId: TcxGridDBColumn;
-    cxGrid1DBTableView1CANTIDAD: TcxGridDBColumn;
-    cxGrid1DBTableView1DESCRIPCION: TcxGridDBColumn;
-    cxGrid1DBTableView1PRECIOUNITARIO: TcxGridDBColumn;
-    cxGrid1DBTableView1EXTENTAS: TcxGridDBColumn;
-    cxGrid1DBTableView1IVA10: TcxGridDBColumn;
-    cxGrid1DBTableView1IVA5: TcxGridDBColumn;
-    GroupBox2: TGroupBox;
-    cxCalcEdit2: TcxCalcEdit;
-    Label5: TLabel;
-    cxCalcEdit3: TcxCalcEdit;
-    Label6: TLabel;
-    Label7: TLabel;
+    ComboBoxImpuesto: TGroupBox;
     GroupBox3: TGroupBox;
     Label8: TLabel;
     Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    EditDescripcion: TEdit;
     EditPrecio: TcxCalcEdit;
-    EditCantidad: TcxCalcEdit;
     Label12: TLabel;
     Label13: TLabel;
     Label14: TLabel;
@@ -66,17 +29,45 @@ type
     cxCalcEdit7: TcxCalcEdit;
     cxCalcEdit8: TcxCalcEdit;
     Button1: TButton;
-    ComboBoxImpuesto: TComboBox;
-    Label15: TLabel;
-    cxgrdbclmnteste: TcxGridDBColumn;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Button1Click(Sender: TObject);
+    Label4: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    ComboBox2: TComboBox;
+    Label6: TLabel;
+    MemTabla: TdxMemData;
+    DataSource1: TDataSource;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    MemTablaCantidad: TIntegerField;
+    MemTablaPrecio: TCurrencyField;
+    MemTablaRuc: TStringField;
+    MemTablaNDeFactura: TStringField;
+    MemTablaNDeTimbrado: TStringField;
+    MemTablaImpuesto: TCurrencyField;
+    Label11: TLabel;
+    Edit6: TEdit;
+    MemTablaDescripcion: TStringField;
+    cxGrid1DBTableView1RecId: TcxGridDBColumn;
+    cxGrid1DBTableView1Cantidad: TcxGridDBColumn;
+    cxGrid1DBTableView1Precio: TcxGridDBColumn;
+    cxGrid1DBTableView1RUC: TcxGridDBColumn;
+    cxGrid1DBTableView1NDeFactura: TcxGridDBColumn;
+    cxGrid1DBTableView1NDeTimbrado: TcxGridDBColumn;
+    cxGrid1DBTableView1Impuesto: TcxGridDBColumn;
+    cxGrid1DBTableView1Descripcion: TcxGridDBColumn;
+    BitBtn1: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
+    cxDateEdit1: TcxDateEdit;
   private
     { Private declarations }
   public
     { Public declarations }
-    procedure Facturacion();
-    procedure CalculoImpuestos();
+
   end;
 
 var
@@ -86,31 +77,4 @@ implementation
 
 {$R *.dfm}
 
-procedure TFormImpuestos.Button1Click(Sender: TObject);
-begin
-  Facturacion();
-end;
-
-procedure TFormImpuestos.CalculoImpuestos;
-var IvaDiez : Double ; IvaCinco : Double ; exenta : Integer;
-begin
-if ComboBoxImpuesto.ItemIndex = 1 then
-
-
-end;
-
-procedure TFormImpuestos.Facturacion;
-begin
-  TBFactura.Insert;
-  TBFacturaCANTIDAD.AsCurrency := EditCantidad.EditValue;
-  TBFacturaCANTIDAD.AsInteger := EditCantidad.EditValue;
-  TBFacturaDESCRIPCION.AsString := EditDescripcion.Text;
-  TBFacturaPRECIOUNITARIO.AsInteger := EditPrecio.EditValue;
-  TBFactura.Post;
-end;
-
-procedure TFormImpuestos.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  Action := caFree;
-end;
 end.
