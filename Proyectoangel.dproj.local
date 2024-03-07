@@ -5,5 +5,21 @@
     <Transaction>2024/03/07 14:01:21.461,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Principal.pas=C:\Users\Desenvolvimento\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
     <Transaction>2024/03/07 14:01:21.461,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Principal.dfm=C:\Users\Desenvolvimento\Documents\Embarcadero\Studio\Projects\Unit4.dfm</Transaction>
     <Transaction>2024/03/07 14:01:37.945,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Proyectoangel.dproj=C:\Users\Desenvolvimento\Documents\Embarcadero\Studio\Projects\Project7.dproj</Transaction>
+    <Transaction>2024/03/07 14:06:49.211,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\siste.pas</Transaction>
+    <Transaction>2024/03/07 14:06:49.336,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit3.pas</Transaction>
+    <Transaction>2024/03/07 14:06:49.555,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\ventanaCalculo.pas</Transaction>
+    <Transaction>2024/03/07 14:07:26.898,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\siste.pas=</Transaction>
+    <Transaction>2024/03/07 14:07:34.207,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit3.pas=</Transaction>
+    <Transaction>2024/03/07 14:11:33.867,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\CalculoDeInteres.pas</Transaction>
+    <Transaction>2024/03/07 14:11:47.476,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\FormFacturacion.pas</Transaction>
   </Transactions>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Principal.pas"/>
+    <File Path="Principal.dfm"/>
+    <File Path="ventanaCalculo.pas"/>
+    <File Path="ventanaCalculo.dfm"/>
+    <File Path="CalculoDeInteres.pas"/>
+    <File Path="CalculoDeInteres.dfm"/>
+    <File Path="FormFacturacion.pas"/>
+  </ProjectSortOrder>
 </BorlandProject>

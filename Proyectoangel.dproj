@@ -87,6 +87,15 @@
             <Form>Form4</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="ventanaCalculo.pas">
+            <Form>Form5</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CalculoDeInteres.pas">
+            <Form>FormImpuestos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormFacturacion.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
