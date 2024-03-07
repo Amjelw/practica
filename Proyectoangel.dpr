@@ -4,8 +4,7 @@ uses
   Vcl.Forms,
   Principal in 'Principal.pas' {Form4},
   ventanaCalculo in 'ventanaCalculo.pas' {Form5},
-  CalculoDeInteres in 'CalculoDeInteres.pas' {FormImpuestos},
-  FormFacturacion in 'FormFacturacion.pas';
+  CalculoDeInteres in 'CalculoDeInteres.pas' {FormImpuestos};
 
 {$R *.res}
 

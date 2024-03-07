@@ -12,6 +12,7 @@
     <Transaction>2024/03/07 14:07:34.207,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit3.pas=</Transaction>
     <Transaction>2024/03/07 14:11:33.867,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\CalculoDeInteres.pas</Transaction>
     <Transaction>2024/03/07 14:11:47.476,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\FormFacturacion.pas</Transaction>
+    <Transaction>2024/03/07 14:22:08.820,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\FormFacturacion.pas=</Transaction>
   </Transactions>
   <ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Principal.pas"/>
@@ -20,6 +21,5 @@
     <File Path="ventanaCalculo.dfm"/>
     <File Path="CalculoDeInteres.pas"/>
     <File Path="CalculoDeInteres.dfm"/>
-    <File Path="FormFacturacion.pas"/>
   </ProjectSortOrder>
 </BorlandProject>
