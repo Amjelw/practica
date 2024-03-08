@@ -30,6 +30,9 @@ object Form4: TForm4
       Links = <
         item
           Item = NavmenuPrincipalItem1
+        end
+        item
+          Item = NavConsultarRuc
         end>
     end
     object NavmenuPrincipalGroup2: TdxNavBarGroup
@@ -49,6 +52,10 @@ object Form4: TForm4
     object NavmenuPrincipalItem2: TdxNavBarItem
       Caption = 'Amortizacion'
       OnClick = NavmenuPrincipalItem2Click
+    end
+    object NavConsultarRuc: TdxNavBarItem
+      Caption = 'Consultar Ruc'
+      OnClick = NavConsultarRucClick
     end
     object NavmenuPrincipalStyleItem1: TdxNavBarStyleItem
       Style.BackColor = clWhite

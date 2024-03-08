@@ -16,8 +16,10 @@ type
     NavmenuPrincipalItem1: TdxNavBarItem;
     NavmenuPrincipalItem2: TdxNavBarItem;
     NavmenuPrincipalStyleItem1: TdxNavBarStyleItem;
+    NavConsultarRuc: TdxNavBarItem;
     procedure NavmenuPrincipalItem1Click(Sender: TObject);
     procedure NavmenuPrincipalItem2Click(Sender: TObject);
+    procedure NavConsultarRucClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -32,8 +34,14 @@ implementation
 
 {$R *.dfm}
 
-uses ventanaCalculo, CalculoDeInteres;
+uses ventanaCalculo, CalculoDeInteres, ConsultaDElRuc;
 
+
+procedure TForm4.NavConsultarRucClick(Sender: TObject);
+begin
+  Form1:= TForm1.Create(self);
+  Form1.Show;
+end;
 
 procedure TForm4.NavmenuPrincipalItem1Click(Sender: TObject);
 begin

@@ -16,6 +16,5 @@ begin
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm4, Form4);
-  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

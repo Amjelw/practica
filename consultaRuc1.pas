@@ -197,6 +197,7 @@ type
   // ************************************************************************ //
   ConsultaRuc = interface(IInvokable)
   ['{557F7BFB-5E5F-4345-9D24-140FB4E8142E}']
+  // 65a90f579dc16c68c9c6f4de69ffb75--4c80918b2a40557b8c101ef56daadf473a002fea passWord
     function  consultaRuc(const apiKey: string; const ruc: string; const dv: string): infoContribuyenteResponse; stdcall;
   end;
 
