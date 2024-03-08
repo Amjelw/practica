@@ -5,23 +5,19 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.Buttons,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxClasses, dxNavBarBase, dxNavBarCollns, dxNavBar, dxNavBarStyles;
 
 type
   TForm4 = class(TForm)
-    MainMenu1: TMainMenu;
-    calculo1: TMenuItem;
-    Amortizacion: TMenuItem;
-    Facturacion: TMenuItem;
-    PanelMenu: TPanel;
-    SpeedButton3: TSpeedButton;
-    BitBttnFactura: TBitBtn;
-    Panel3: TPanel;
-    SpeedButton2: TSpeedButton;
-
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure SpeedButton3Click(Sender: TObject);
-    procedure BitBttnFacturaClick(Sender: TObject);
+    NavmenuPrincipal: TdxNavBar;
+    NavmenuPrincipalGroup1: TdxNavBarGroup;
+    NavmenuPrincipalGroup2: TdxNavBarGroup;
+    NavmenuPrincipalItem1: TdxNavBarItem;
+    NavmenuPrincipalItem2: TdxNavBarItem;
+    NavmenuPrincipalStyleItem1: TdxNavBarStyleItem;
+    procedure NavmenuPrincipalItem1Click(Sender: TObject);
+    procedure NavmenuPrincipalItem2Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -39,22 +35,16 @@ implementation
 uses ventanaCalculo, CalculoDeInteres;
 
 
-procedure TForm4.BitBttnFacturaClick(Sender: TObject);
+procedure TForm4.NavmenuPrincipalItem1Click(Sender: TObject);
 begin
-  Form5:= TForm5.Create(Self);
+   Form5:= TForm5.Create(Self);
    Form5.Show;
-   PanelMenu.Visible := False;
-   Panel3.Visible := False;
 end;
 
-procedure TForm4.SpeedButton2Click(Sender: TObject);
+procedure TForm4.NavmenuPrincipalItem2Click(Sender: TObject);
 begin
-  PanelMenu.Visible := True;
-end;
-
-procedure TForm4.SpeedButton3Click(Sender: TObject);
-begin
-PanelMenu.Visible := False;
+  FormImpuestos:= TFormImpuestos.Create(Self);
+  FormImpuestos.Show;
 end;
 
 end.

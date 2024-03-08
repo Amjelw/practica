@@ -12,6 +12,7 @@ object Form5: TForm5
   Font.Style = [fsBold]
   FormStyle = fsMDIChild
   OldCreateOrder = False
+  Position = poMainFormCenter
   Visible = True
   OnClose = FormClose
   PixelsPerInch = 96
@@ -32,9 +33,6 @@ object Form5: TForm5
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 32
-    ExplicitWidth = 584
-    ExplicitHeight = 407
     object Label4: TLabel
       Left = 47
       Top = 356

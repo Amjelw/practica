@@ -83,28 +83,28 @@ procedure TForm5.sumasDeCalculoDeAmortizacion;
 
      for i :=  1 to EditMeses.EditValue  do
        begin
-       // insercion de datos en la tabla
-       TBDATA.Open;
-       TBDATA.Insert;
-       TBDATAMeses.AsInteger := i;
-       TBDATAHonorario.AsCurrency := VsaldoDeudo * Calculo ;
+         // insercion de datos en la tabla
+         TBDATA.Open;
+         TBDATA.Insert;
+         TBDATAMeses.AsInteger := i;
+         TBDATAHonorario.AsCurrency := VsaldoDeudo * Calculo ;
 
-       // suma de saldos deudor
-       TBDATACapital.AsCurrency := VsaldoDeudo;
-       VsaldoDeudo :=VsaldoDeudo + (VsaldoDeudo * calculo);
-       // suma de intereses
-       VInteresTotales:=  VInteresTotales + TBDATAHonorario.AsCurrency;
-       editInteres.EditValue := VInteresTotales ;
-       editPago.EditValue := EditCapital.EditValue + VInteresTotales ;
+         // suma de saldos deudor
+         TBDATACapital.AsCurrency := VsaldoDeudo;
+         VsaldoDeudo :=VsaldoDeudo + (VsaldoDeudo * calculo);
+          // suma de intereses
+         VInteresTotales:=  VInteresTotales + TBDATAHonorario.AsCurrency;
+         editInteres.EditValue := VInteresTotales ;
+         editPago.EditValue := EditCapital.EditValue + VInteresTotales ;
 
-       // un condicional para poder hacer el calculo, puede que lo cambie por una funcion
-       if i  = EditMeses.EditValue then
-         begin
-           TBDATAAmortizacionSaldoDeudor.AsCurrency := EditCapital.EditValue;
-           // aca va la suma del interes total mas el capital inicial
-           TBDATApagamiento.AsCurrency := EditCapital.EditValue + VInteresTotales;
-         end;
+         // un condicional para poder hacer el calculo, puede que lo cambie por una funcion
+         if i  = EditMeses.EditValue then
+           begin
+             TBDATAAmortizacionSaldoDeudor.AsCurrency := EditCapital.EditValue;
+             // aca va la suma del interes total mas el capital inicial
+             TBDATApagamiento.AsCurrency := EditCapital.EditValue + VInteresTotales;
+           end;
          TBDATA.Post;
-      end;
- end;
+       end;
+  end;
 end.
