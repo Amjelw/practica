@@ -6,7 +6,7 @@ uses
   ventanaCalculo in 'ventanaCalculo.pas' {Form5},
   CalculoDeInteres in 'CalculoDeInteres.pas' {FormImpuestos},
   consultaRuc1 in 'consultaRuc1.pas',
-  ConsultaDElRuc in 'ConsultaDElRuc.pas' {Form1};
+  ConsultaDElRuc in 'ConsultaDElRuc.pas';
 
 {$R *.res}
 

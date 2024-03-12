@@ -99,7 +99,6 @@
         </DCCReference>
         <DCCReference Include="consultaRuc1.pas"/>
         <DCCReference Include="ConsultaDElRuc.pas">
-            <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

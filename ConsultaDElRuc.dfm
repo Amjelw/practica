@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 621
-  ClientWidth = 825
+  ClientHeight = 666
+  ClientWidth = 861
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,26 +16,56 @@ object Form1: TForm1
   Visible = True
   PixelsPerInch = 96
   TextHeight = 13
+  object Label7: TLabel
+    Left = 30
+    Top = 48
+    Width = 29
+    Height = 13
+    Caption = 'R.U.C'
+  end
+  object Label8: TLabel
+    Left = 214
+    Top = 101
+    Width = 29
+    Height = 13
+    Caption = 'R.U.C'
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 825
-    Height = 621
+    Width = 861
+    Height = 666
     Align = alClient
+    Color = clActiveCaption
+    ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = -408
+    ExplicitTop = -168
     object GroupBox1: TGroupBox
-      Left = 25
-      Top = 15
-      Width = 782
-      Height = 258
+      Left = 15
+      Top = 24
+      Width = 838
+      Height = 273
       Caption = 'Consulta RUC / DOC . TIMBR.'
+      Color = clActiveCaption
+      ParentBackground = False
+      ParentColor = False
       TabOrder = 0
       object GroupBox2: TGroupBox
-        Left = 16
-        Top = 16
-        Width = 273
-        Height = 225
-        Caption = 'GroupBox2'
+        Left = 15
+        Top = 17
+        Width = 310
+        Height = 160
+        Caption = 'RUC'
+        Color = clActiveCaption
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = -1
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
         TabOrder = 0
         object Label1: TLabel
           Left = 22
@@ -45,8 +75,8 @@ object Form1: TForm1
           Caption = 'R.U.C'
         end
         object Label2: TLabel
-          Left = 22
-          Top = 84
+          Left = 222
+          Top = 40
           Width = 13
           Height = 13
           Caption = 'DV'
@@ -54,23 +84,29 @@ object Form1: TForm1
         object EditNumeroDeRuc: TEdit
           Left = 72
           Top = 37
-          Width = 153
+          Width = 129
           Height = 21
           TabOrder = 0
         end
         object EditIdentificadorDelRuc: TEdit
-          Left = 72
-          Top = 81
-          Width = 153
+          Left = 249
+          Top = 37
+          Width = 48
           Height = 21
           TabOrder = 1
         end
         object BitBtn1: TBitBtn
-          Left = 48
-          Top = 165
-          Width = 177
-          Height = 41
+          Left = 1
+          Top = 108
+          Width = 306
+          Height = 38
+          Align = alCustom
           Caption = 'Consultar RUC'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
           Glyph.Data = {
             36100000424D3610000000000000360000002800000020000000200000000100
             2000000000000010000000000000000000000000000000000000000000000000
@@ -202,16 +238,20 @@ object Form1: TForm1
             0000000000000000000000000000000000000000000000000000000000000000
             0000000000000000000000000000000000000000000000000000000000000000
             0000000000000000000000000000000000000000000000000000}
+          ParentFont = False
           TabOrder = 2
           OnClick = BitBtn1Click
         end
       end
       object GroupBox4: TGroupBox
-        Left = 295
-        Top = 16
-        Width = 442
-        Height = 225
-        Caption = 'GroupBox4'
+        Left = 363
+        Top = 17
+        Width = 462
+        Height = 240
+        Caption = 'DOC. TIMBRADO'
+        Color = clActiveCaption
+        ParentBackground = False
+        ParentColor = False
         TabOrder = 1
         object Label3: TLabel
           Left = 12
@@ -243,13 +283,13 @@ object Form1: TForm1
         end
         object EditDate: TcxDateEdit
           Left = 136
-          Top = 108
+          Top = 102
           TabOrder = 0
           Width = 185
         end
         object EditNumeroDeDocumento: TEdit
           Left = 136
-          Top = 81
+          Top = 48
           Width = 185
           Height = 21
           TabOrder = 1
@@ -263,41 +303,77 @@ object Form1: TForm1
         end
         object BitBtn2: TBitBtn
           Left = 12
-          Top = 184
+          Top = 168
           Width = 198
-          Height = 25
+          Height = 41
           Caption = 'Consultar documento trimbrado'
           TabOrder = 3
         end
         object BitBtn3: TBitBtn
-          Left = 216
-          Top = 184
-          Width = 217
-          Height = 25
+          Left = 224
+          Top = 168
+          Width = 222
+          Height = 40
           Caption = 'Consultar documento maquina registradora'
           TabOrder = 4
+        end
+        object Edit1: TEdit
+          Left = 136
+          Top = 75
+          Width = 185
+          Height = 21
+          TabOrder = 5
+          Text = 'Edit1'
         end
       end
     end
     object GroupBox3: TGroupBox
-      Left = 25
-      Top = 279
-      Width = 782
+      Left = 15
+      Top = 303
+      Width = 447
       Height = 330
       Caption = 'Informacion'
       TabOrder = 1
       object MemoInformacionDeConsultaRuc: TMemo
         Left = 2
         Top = 15
-        Width = 778
+        Width = 443
         Height = 313
         Align = alClient
-        Lines.Strings = (
-          '')
+        Color = clWhite
+        Font.Charset = ANSI_CHARSET
+        Font.Color = -1
+        Font.Height = -13
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = 22
+        ExplicitWidth = 255
       end
     end
+  end
+  object RESTClient: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'UTF-8, *;q=0.8'
+    AcceptEncoding = 'identity'
+    BaseURL = 'https://servicios.set.gov.py/EsetApiWS'
+    Params = <>
+    HandleRedirects = True
+    Left = 58
+    Top = 229
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient
+    Params = <>
+    Resource = 'consultaRuc?wsdl'
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 129
+    Top = 229
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'text/xml'
+    Left = 212
+    Top = 229
   end
 end

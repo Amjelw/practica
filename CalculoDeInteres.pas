@@ -72,13 +72,11 @@ type
     cxGrid1DBTableView1EXENTA: TcxGridDBColumn;
     BitBttnSumaTotal: TBitBtn;
     procedure BttnGuardarClick(Sender: TObject);
-    procedure BitBttnSumaTotalClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     procedure IsercionAlaTabla();
-    procedure sumatotalTabla();
   end;
 
 var
@@ -88,11 +86,6 @@ implementation
 
 {$R *.dfm}
 
-
-procedure TFormImpuestos.BitBttnSumaTotalClick(Sender: TObject);
-begin
-  sumatotalTabla();
-end;
 
 procedure TFormImpuestos.BttnGuardarClick(Sender: TObject);
 begin
@@ -130,16 +123,4 @@ begin
     end;
   MemTabla.Post;
 end;
-procedure TFormImpuestos.sumatotalTabla;
-var VsumaTotal : Currency;
-begin
-  MemTabla.First;
-  while MemTabla.Eof do
-    begin
-      VsumaTotal := VsumaTotal +MemTablaPrecio.AsCurrency;
-      MemTabla.Next;
-    end;
-    EditTotalIva.EditValue := VsumaTotal;
-end;
-
 end.

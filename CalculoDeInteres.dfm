@@ -37,8 +37,6 @@ object FormImpuestos: TFormImpuestos
     Height = 487
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 797
-    ExplicitHeight = 495
     object Panel2: TPanel
       Left = 1
       Top = 1
@@ -244,7 +242,6 @@ object FormImpuestos: TFormImpuestos
       Height = 250
       Align = alTop
       TabOrder = 3
-      ExplicitWidth = 735
       object cxGrid1DBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = DataSource1
@@ -303,7 +300,6 @@ object FormImpuestos: TFormImpuestos
       Height = 25
       Caption = 'BitBttnSumaTotal'
       TabOrder = 4
-      OnClick = BitBttnSumaTotalClick
     end
   end
   object MemTabla: TdxMemData
