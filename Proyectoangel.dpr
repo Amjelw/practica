@@ -6,7 +6,10 @@ uses
   ventanaCalculo in 'ventanaCalculo.pas' {Form5},
   CalculoDeInteres in 'CalculoDeInteres.pas' {FormImpuestos},
   consultaRuc1 in 'consultaRuc1.pas',
-  ConsultaDElRuc in 'ConsultaDElRuc.pas';
+  ConsultaDElRuc in 'ConsultaDElRuc.pas',
+  validezDocumentoTimbrado1 in 'validezDocumentoTimbrado1.pas',
+  UItemsCbx in 'UItemsCbx.pas',
+  Indentificador in 'Indentificador.pas';
 
 {$R *.res}
 

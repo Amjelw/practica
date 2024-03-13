@@ -31,7 +31,11 @@
     <Transaction>2024/03/08 11:24:35.000.845,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\ConsultaDElRuc.dfm=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit1.dfm</Transaction>
     <Transaction>2024/03/11 08:17:29.000.496,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\ConsultaDElRuc.pas=</Transaction>
     <Transaction>2024/03/11 08:18:57.000.700,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\ConsultaDElRuc.pas</Transaction>
-    <Transaction>2024/03/12 11:16:10.848,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit1.pas</Transaction>
+    <Transaction>2024/03/12 11:16:10.000.848,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit1.pas</Transaction>
+    <Transaction>2024/03/13 07:23:14.000.888,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\validezDocumentoTimbrado1.pas</Transaction>
+    <Transaction>2024/03/13 09:50:58.000.994,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\UItemsCbx.pas</Transaction>
+    <Transaction>2024/03/13 10:39:19.529,=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit1.pas</Transaction>
+    <Transaction>2024/03/13 10:51:16.763,C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Indentificador.pas=C:\Users\Desenvolvimento\Documents\Angel Propietario\practica\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Principal.pas"/>
@@ -40,7 +44,10 @@
     <File Path="ventanaCalculo.dfm"/>
     <File Path="CalculoDeInteres.pas"/>
     <File Path="CalculoDeInteres.dfm"/>
-    <File Path="consultaRuc1.pas"/>
     <File Path="ConsultaDElRuc.pas"/>
+    <File Path="validezDocumentoTimbrado1.pas"/>
+    <File Path="consultaRuc1.pas"/>
+    <File Path="UItemsCbx.pas"/>
+    <File Path="Indentificador.pas"/>
   </ProjectSortOrder>
 </BorlandProject>

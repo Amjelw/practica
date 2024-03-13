@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 666
-  ClientWidth = 861
+  ClientHeight = 639
+  ClientWidth = 839
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,7 @@ object Form1: TForm1
   OldCreateOrder = False
   Position = poMainFormCenter
   Visible = True
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
   object Label7: TLabel
@@ -33,18 +34,16 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 861
-    Height = 666
+    Width = 839
+    Height = 639
     Align = alClient
     Color = clActiveCaption
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -408
-    ExplicitTop = -168
     object GroupBox1: TGroupBox
-      Left = 15
+      Left = 53
       Top = 24
-      Width = 838
+      Width = 748
       Height = 273
       Caption = 'Consulta RUC / DOC . TIMBR.'
       Color = clActiveCaption
@@ -73,13 +72,25 @@ object Form1: TForm1
           Width = 29
           Height = 13
           Caption = 'R.U.C'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = -1
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object Label2: TLabel
           Left = 222
           Top = 40
-          Width = 13
+          Width = 15
           Height = 13
           Caption = 'DV'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = -1
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object EditNumeroDeRuc: TEdit
           Left = 72
@@ -96,8 +107,8 @@ object Form1: TForm1
           TabOrder = 1
         end
         object BitBtn1: TBitBtn
-          Left = 1
-          Top = 108
+          Left = 0
+          Top = 113
           Width = 306
           Height = 38
           Align = alCustom
@@ -244,9 +255,9 @@ object Form1: TForm1
         end
       end
       object GroupBox4: TGroupBox
-        Left = 363
+        Left = 331
         Top = 17
-        Width = 462
+        Width = 374
         Height = 240
         Caption = 'DOC. TIMBRADO'
         Color = clActiveCaption
@@ -255,100 +266,192 @@ object Form1: TForm1
         TabOrder = 1
         object Label3: TLabel
           Left = 12
-          Top = 24
-          Width = 72
+          Top = 60
+          Width = 85
           Height = 13
           Caption = 'N'#176' de timbrado'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object Label4: TLabel
           Left = 12
-          Top = 51
-          Width = 60
+          Top = 87
+          Width = 68
           Height = 13
           Caption = 'Tipo de Doc.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object Label5: TLabel
           Left = 12
-          Top = 84
-          Width = 83
+          Top = 120
+          Width = 97
           Height = 13
           Caption = 'N'#176' de documento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
         object Label6: TLabel
-          Left = 12
-          Top = 113
-          Width = 47
+          Left = 11
+          Top = 178
+          Width = 53
           Height = 13
           Caption = 'FechaExp'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
         end
-        object EditDate: TcxDateEdit
-          Left = 136
-          Top = 102
+        object Label9: TLabel
+          Left = 56
+          Top = 27
+          Width = 29
+          Height = 13
+          Caption = 'R.U.C'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label10: TLabel
+          Left = 248
+          Top = 27
+          Width = 15
+          Height = 13
+          Caption = 'DV'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label11: TLabel
+          Left = 12
+          Top = 150
+          Width = 117
+          Height = 13
+          Caption = 'Medio de generacion'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object BitBtn2: TBitBtn
+          Left = 79
+          Top = 211
+          Width = 218
+          Height = 25
+          Caption = 'Consultar documento trimbrado'
           TabOrder = 0
-          Width = 185
+          OnClick = BitBtn2Click
         end
-        object EditNumeroDeDocumento: TEdit
-          Left = 136
-          Top = 48
-          Width = 185
+        object ComboTipoDoc: TComboBox
+          Left = 144
+          Top = 87
+          Width = 201
           Height = 21
           TabOrder = 1
         end
         object EditNumeroDeTimbrado: TEdit
-          Left = 136
-          Top = 21
-          Width = 185
+          Left = 144
+          Top = 60
+          Width = 201
           Height = 21
           TabOrder = 2
         end
-        object BitBtn2: TBitBtn
-          Left = 12
-          Top = 168
-          Width = 198
-          Height = 41
-          Caption = 'Consultar documento trimbrado'
+        object DateExp: TDateTimePicker
+          Left = 144
+          Top = 176
+          Width = 201
+          Height = 21
+          Date = 45364.338162233800000000
+          Time = 45364.338162233800000000
           TabOrder = 3
         end
-        object BitBtn3: TBitBtn
-          Left = 224
-          Top = 168
-          Width = 222
-          Height = 40
-          Caption = 'Consultar documento maquina registradora'
+        object EditMaskNumeroDoc: TMaskEdit
+          Left = 144
+          Top = 116
+          Width = 200
+          Height = 21
+          EditMask = '###-###-#######;1;_'
+          MaxLength = 15
           TabOrder = 4
+          Text = '   -   -       '
         end
-        object Edit1: TEdit
-          Left = 136
-          Top = 75
-          Width = 185
+        object EditRucTimbrado: TEdit
+          Left = 96
+          Top = 24
+          Width = 137
           Height = 21
           TabOrder = 5
+        end
+        object EditDvTimbrado: TEdit
+          Left = 267
+          Top = 24
+          Width = 57
+          Height = 21
+          TabOrder = 6
           Text = 'Edit1'
+        end
+        object ComboBoxMedioGen: TComboBox
+          Left = 144
+          Top = 147
+          Width = 201
+          Height = 21
+          TabOrder = 7
+          OnEnter = ComboBoxMedioGenEnter
+          Items.Strings = (
+            'factura')
         end
       end
     end
     object GroupBox3: TGroupBox
       Left = 15
       Top = 303
-      Width = 447
+      Width = 818
       Height = 330
       Caption = 'Informacion'
       TabOrder = 1
       object MemoInformacionDeConsultaRuc: TMemo
         Left = 2
         Top = 15
-        Width = 443
+        Width = 814
         Height = 313
         Align = alClient
-        Color = clWhite
+        Color = 64
         Font.Charset = ANSI_CHARSET
-        Font.Color = -1
+        Font.Color = clWhite
         Font.Height = -13
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 255
+        Touch.InteractiveGestures = [igPan]
+        Touch.ParentTabletOptions = False
+        Touch.TabletOptions = [toPressAndHold]
+        WantReturns = False
+        WordWrap = False
+        ExplicitLeft = 1
+        ExplicitTop = 14
       end
     end
   end
@@ -359,7 +462,7 @@ object Form1: TForm1
     BaseURL = 'https://servicios.set.gov.py/EsetApiWS'
     Params = <>
     HandleRedirects = True
-    Left = 58
+    Left = 106
     Top = 229
   end
   object RESTRequest1: TRESTRequest
@@ -368,12 +471,12 @@ object Form1: TForm1
     Resource = 'consultaRuc?wsdl'
     Response = RESTResponse1
     SynchronizedEvents = False
-    Left = 129
+    Left = 193
     Top = 229
   end
   object RESTResponse1: TRESTResponse
     ContentType = 'text/xml'
-    Left = 212
+    Left = 292
     Top = 229
   end
 end

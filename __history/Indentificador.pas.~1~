@@ -1,0 +1,21 @@
+unit Indentificador;
+
+interface
+
+type TID = class
+  private
+    FNumero_ID : Integer;
+  public
+    constructor create(Numero_id : integer);
+end;
+
+
+implementation
+{ TID }
+
+constructor TID.create(Numero_id: integer);
+begin
+  Self.FNumero_ID := Numero_id;
+end;
+
+end.
