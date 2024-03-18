@@ -86,7 +86,7 @@ type
   ValidezDocumentoTimbrado = interface(IInvokable)
   ['{75FC8338-7EA6-1F01-6C0A-C5DFCEF93D72}']
     function  validezDocumentoTimbrado(const apiKey: string; const ruc: string; const dv: string; const numero_timbrado: string; const tipo_documento: Integer; const numero_documento: string;
-                                       const fecha_expedicion: string{const medio_generacion: Integer}): validezDocumentoResponse; stdcall;
+                                       const fecha_expedicion: string ;const medio_generacion: Integer): validezDocumentoResponse; stdcall;
   end;
 
 function GetValidezDocumentoTimbrado(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): ValidezDocumentoTimbrado;
@@ -98,7 +98,7 @@ implementation
 function GetValidezDocumentoTimbrado(UseWSDL: Boolean; Addr: string; HTTPRIO: THTTPRIO): ValidezDocumentoTimbrado;
 const
   defWSDL = 'https://servicios.set.gov.py/EsetApiWS/validezDocumentoTimbrado?wsdl';
-  defURL  = 'http://servicios.set.gov.py/servicios-proxy-consulta-publica/EsetApiWS/validezDocumentoTimbrado';
+  defURL  = 'https://servicios.set.gov.py/EsetApiWS/validezDocumentoTimbrado';
   defSvc  = 'ValidezDocumentoTimbradoPort';
   defPrt  = 'ValidezDocumentoTimbradoPort';
 var

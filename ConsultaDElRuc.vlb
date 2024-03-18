@@ -1,43 +1,97 @@
 ﻿[Panel1]
-Coordinates=82,339,47,51
+Coordinates=82,339,55,58
 
 [GroupBox1]
-Coordinates=231,339,70,51
+Coordinates=231,339,79,58
 
 [RESTResponse1]
-Coordinates=10,10,96,285
+Coordinates=10,10,113,344
 
 [GroupBox2]
-Coordinates=453,416,70,51
+Coordinates=453,416,79,58
 
 [MemoInformacionDeConsultaRuc]
-Coordinates=186,191,179,51
+Coordinates=186,191,207,58
 Visible=True
 
 [Label2]
-Coordinates=10,339,46,51
+Coordinates=10,339,53,58
 
 [EditIdentificadorDelRuc]
-Coordinates=571,339,131,51
+Coordinates=571,339,150,58
 
 [RESTClient]
-Coordinates=505,10,70,69
+Coordinates=505,10,82,80
 
 [EditNumeroDeRuc]
-Coordinates=226,416,105,51
+Coordinates=226,416,121,58
 
 [RESTRequest1]
-Coordinates=391,10,88,87
+Coordinates=391,10,103,102
 
 [Label1]
-Coordinates=673,10,46,51
+Coordinates=673,10,53,58
 
 [BitBtn1]
-Coordinates=327,339,50,51
+Coordinates=327,339,56,58
 
 [GroupBox3]
-Coordinates=728,339,70,51
+Coordinates=728,339,79,58
 
 []
-Coordinates=357,416,70,51
+Coordinates=235,144,91,36
+
+[EditNumeroDeTimbrado]
+Coordinates=431,493,153,58
+
+[EditMaskNumeroDoc]
+Coordinates=35,512,136,58
+
+[ComboTipoDoc]
+Coordinates=235,1,103,124
+
+[Label5]
+Coordinates=64,373,53,58
+
+[Label4]
+Coordinates=123,373,53,58
+
+[Label10]
+Coordinates=0,0,60,58
+
+[GroupBox4]
+Coordinates=283,512,79,58
+
+[ComboBoxMedioGen]
+Coordinates=79,1,137,124
+
+[Label7]
+Coordinates=372,469,53,58
+
+[Label8]
+Coordinates=142,298,53,58
+
+[EditRucTimbrado]
+Coordinates=235,268,114,58
+
+[DateExp]
+Coordinates=431,131,64,58
+
+[Label3]
+Coordinates=431,285,53,58
+
+[Label6]
+Coordinates=142,221,53,58
+
+[Label9]
+Coordinates=0,411,53,58
+
+[BitBtn2]
+Coordinates=431,208,56,58
+
+[Label11]
+Coordinates=142,144,60,58
+
+[EditDvTimbrado]
+Coordinates=174,512,107,58
 

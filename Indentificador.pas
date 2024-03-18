@@ -7,16 +7,16 @@ type TID = class
     Fnombre_ID : String;
     FNumero_ID : Integer;
   public
-    constructor create(Nombre_id : string ;Numero_id : integer);
-    property Nombre_id: String read Fnombre_ID write Fnombre_ID;
-    property Numero_id: Integer read FNumero_ID  write FNumero_ID;
+    constructor Create(Nombre_id : string ;Numero_id : integer);
+    property Nombre_id:   String read Fnombre_ID write Fnombre_ID;
+    property Numero_id:   Integer read FNumero_ID  write FNumero_ID;
 end;
 
 
 implementation
 { TID }
 
-constructor TID.create(Nombre_id: string; Numero_id: integer);
+constructor TID.Create(Nombre_id: string; Numero_id: integer);
 begin
   Self.Fnombre_ID := Nombre_id;
   self.FNumero_ID := Numero_id;

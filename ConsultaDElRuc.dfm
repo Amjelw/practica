@@ -14,7 +14,7 @@ object Form1: TForm1
   OldCreateOrder = False
   Position = poMainFormCenter
   Visible = True
-  OnActivate = FormActivate
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label7: TLabel
@@ -37,18 +37,30 @@ object Form1: TForm1
     Width = 839
     Height = 639
     Align = alClient
-    Color = clActiveCaption
+    Color = clActiveBorder
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
     ParentBackground = False
+    ParentFont = False
     TabOrder = 0
     object GroupBox1: TGroupBox
-      Left = 53
+      Left = 57
       Top = 24
       Width = 748
       Height = 273
       Caption = 'Consulta RUC / DOC . TIMBR.'
-      Color = clActiveCaption
+      Color = clSilver
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
       ParentBackground = False
       ParentColor = False
+      ParentFont = False
       TabOrder = 0
       object GroupBox2: TGroupBox
         Left = 15
@@ -56,7 +68,7 @@ object Form1: TForm1
         Width = 310
         Height = 160
         Caption = 'RUC'
-        Color = clActiveCaption
+        Color = clSilver
         Font.Charset = DEFAULT_CHARSET
         Font.Color = -1
         Font.Height = -11
@@ -260,7 +272,7 @@ object Form1: TForm1
         Width = 374
         Height = 240
         Caption = 'DOC. TIMBRADO'
-        Color = clActiveCaption
+        Color = clSilver
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
@@ -317,7 +329,7 @@ object Form1: TForm1
           ParentFont = False
         end
         object Label9: TLabel
-          Left = 56
+          Left = 11
           Top = 27
           Width = 29
           Height = 13
@@ -330,14 +342,14 @@ object Form1: TForm1
           ParentFont = False
         end
         object Label10: TLabel
-          Left = 248
-          Top = 27
-          Width = 15
-          Height = 13
-          Caption = 'DV'
+          Left = 260
+          Top = 26
+          Width = 7
+          Height = 19
+          Caption = '-'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -11
+          Font.Height = -16
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
@@ -368,59 +380,55 @@ object Form1: TForm1
           Left = 144
           Top = 87
           Width = 201
-          Height = 21
+          Height = 24
           TabOrder = 1
         end
         object EditNumeroDeTimbrado: TEdit
           Left = 144
-          Top = 60
+          Top = 57
           Width = 201
-          Height = 21
+          Height = 24
           TabOrder = 2
         end
         object DateExp: TDateTimePicker
           Left = 144
           Top = 176
           Width = 201
-          Height = 21
+          Height = 24
           Date = 45364.338162233800000000
           Time = 45364.338162233800000000
           TabOrder = 3
         end
         object EditMaskNumeroDoc: TMaskEdit
           Left = 144
-          Top = 116
+          Top = 117
           Width = 200
-          Height = 21
+          Height = 24
           EditMask = '###-###-#######;1;_'
           MaxLength = 15
           TabOrder = 4
           Text = '   -   -       '
         end
         object EditRucTimbrado: TEdit
-          Left = 96
+          Left = 105
           Top = 24
           Width = 137
-          Height = 21
+          Height = 24
           TabOrder = 5
         end
         object EditDvTimbrado: TEdit
-          Left = 267
+          Left = 286
           Top = 24
           Width = 57
-          Height = 21
+          Height = 24
           TabOrder = 6
-          Text = 'Edit1'
         end
         object ComboBoxMedioGen: TComboBox
           Left = 144
           Top = 147
           Width = 201
-          Height = 21
+          Height = 24
           TabOrder = 7
-          OnEnter = ComboBoxMedioGenEnter
-          Items.Strings = (
-            'factura')
         end
       end
     end
@@ -433,9 +441,9 @@ object Form1: TForm1
       TabOrder = 1
       object MemoInformacionDeConsultaRuc: TMemo
         Left = 2
-        Top = 15
+        Top = 18
         Width = 814
-        Height = 313
+        Height = 310
         Align = alClient
         Color = 64
         Font.Charset = ANSI_CHARSET
@@ -450,8 +458,6 @@ object Form1: TForm1
         Touch.TabletOptions = [toPressAndHold]
         WantReturns = False
         WordWrap = False
-        ExplicitLeft = 1
-        ExplicitTop = 14
       end
     end
   end
@@ -462,7 +468,7 @@ object Form1: TForm1
     BaseURL = 'https://servicios.set.gov.py/EsetApiWS'
     Params = <>
     HandleRedirects = True
-    Left = 106
+    Left = 122
     Top = 229
   end
   object RESTRequest1: TRESTRequest
@@ -471,12 +477,12 @@ object Form1: TForm1
     Resource = 'consultaRuc?wsdl'
     Response = RESTResponse1
     SynchronizedEvents = False
-    Left = 193
+    Left = 209
     Top = 229
   end
   object RESTResponse1: TRESTResponse
     ContentType = 'text/xml'
-    Left = 292
+    Left = 296
     Top = 229
   end
 end

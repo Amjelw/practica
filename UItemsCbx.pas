@@ -5,21 +5,22 @@ interface
 type TTipoDoc = class
   private
     Fnombre: string;
-    FValor: Integer;
+    FIdTipoDeDoc: Integer;
   public
-    constructor Create( nombre: string; valor: Integer );
-    property nombre:     string read Fnombre write Fnombre;
-    property valor:      Integer read FValor write FValor;
+    constructor Create( nombre: string; IdTipoDeDoc: Integer );
+
+    property nombre:           string read Fnombre write Fnombre;
+    property IdTipoDeDoc:      Integer read FIdTipoDeDoc write FIdTipoDeDoc;
 end;
 
 implementation
 
 { TTipoDoc }
 
-constructor TTipoDoc.Create( nombre: string; valor: Integer );
+constructor TTipoDoc.Create( nombre: string; IdTipoDeDoc: Integer );
 begin
      Self.Fnombre:= nombre;
-     Self.FValor:= valor;
+     Self.FIdTipoDeDoc:= IdTipoDeDoc;
 end;
 
 end.

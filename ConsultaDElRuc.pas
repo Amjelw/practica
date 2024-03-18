@@ -11,7 +11,7 @@ uses
   Soap.SOAPHTTPClient, IPPeerClient, Data.Bind.Components,
   Data.Bind.ObjectScope, REST.Client, System.Rtti, System.Bindings.Outputs,
   Vcl.Bind.Editors, Data.Bind.EngExt, Vcl.Bind.DBEngExt, consultaRuc1 , validezDocumentoTimbrado1,
-  Vcl.Mask,UItemsCbx, Indentificador;
+  Vcl.Mask,UItemsCbx, Indentificador ;
 
 type
   TForm1 = class(TForm)
@@ -48,8 +48,7 @@ type
     ComboBoxMedioGen: TComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
-    procedure ComboBoxMedioGenEnter(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,8 +78,10 @@ end;
 
 procedure TForm1.BitBtn2Click(Sender: TObject);
 begin
-  {aqui ira el boton de la consulta del timbrado}
+  insertarTimbrado();
 end;
+
+
 
 
 procedure TForm1.insercionRuc;
@@ -99,11 +100,12 @@ begin
   else
     begin
       MemoInformacionDeConsultaRuc.Lines.Add('------------INFORMACION------------');
-      MemoInformacionDeConsultaRuc.Lines.Add('el ruc es:                  ' + EditNumeroDeRuc.Text + '-' +  EditIdentificadorDelRuc.Text);
-      MemoInformacionDeConsultaRuc.Lines.Add('el tipo de persona es:      ' + objInfoContrbuyente.contribuyente.tipoPersona);
-      MemoInformacionDeConsultaRuc.Lines.Add('el estado es:               ' + objInfoContrbuyente.contribuyente.estado);
+      MemoInformacionDeConsultaRuc.Lines.Add('El R.U.C es:                  ' + EditNumeroDeRuc.Text + '-' +  EditIdentificadorDelRuc.Text);
+      MemoInformacionDeConsultaRuc.Lines.Add('El tipo de persona es:      ' + objInfoContrbuyente.contribuyente.tipoPersona);
+      MemoInformacionDeConsultaRuc.Lines.Add('El estado es:               ' + objInfoContrbuyente.contribuyente.estado);
       MemoInformacionDeConsultaRuc.Lines.Add('La categoria es:            ' + objInfoContrbuyente.contribuyente.categoria);
-      MemoInformacionDeConsultaRuc.Lines.Add('el Nombre comercial es:     ' + objInfoContrbuyente.contribuyente.razonSocial);
+      MemoInformacionDeConsultaRuc.Lines.Add('El Nombre Comercial es:     ' + objInfoContrbuyente.contribuyente.razonSocial);
+      MemoInformacionDeConsultaRuc.Lines.Add('El R.U.C anterior es:       ' + objInfoContrbuyente.contribuyente.rucAnterior)
     end;
   objInfoContrbuyente.Free;
 end;
@@ -111,29 +113,25 @@ end;
 
 procedure TForm1.insertarTimbrado;
 var
-  InterFaceConsultarTimbrado : ValidezDocumentoTimbrado;
-  objResponseValidateDoc : validezDocumentoResponse;
+  objValidez : validezDocumentoResponse;
+  InterDocTimbrado  : ValidezDocumentoTimbrado;
 const
   ApiKey : string = '365a90f579dc16c68c9c6f4de69ffb75--4c80918b2a40557b8c101ef56daadf473a002fea';
 begin
-  InterFaceConsultarTimbrado.validezDocumentoTimbrado(ApiKey,EditRucTimbrado.Text,
-                                                      EditDvTimbrado.Text,
-                                                      EditNumeroDeTimbrado.Text,
-                                                      ComboTipoDoc.ItemIndex,
-                                                      EditMaskNumeroDoc.Text,
-                                                      DateExp.ToString);
+  interDocTimbrado := GetValidezDocumentoTimbrado();
+  objValidez :=  InterDocTimbrado.validezDocumentoTimbrado(ApiKey,EditRucTimbrado.Text,
+                                                        EditDvTimbrado.Text,
+                                                        EditNumeroDeTimbrado.Text,
+                                                        ComboTipoDoc.ItemIndex,
+                                                        EditMaskNumeroDoc.Text,
+                                                        DateExp.ToString,ComboBoxMedioGen.ItemIndex);
+  if objValidez.estado = 'INVALIDO'  then
+    ShowMessage(objValidez.mensaje);
 
-  objResponseValidateDoc.Free;
+  objValidez.Free;
 end;
 
-
-
-
-procedure TForm1.FormActivate(Sender: TObject);
-var
-  ObjOpcion : TTipoDoc;
-  ObjIdentificador : TID;
-
+procedure TForm1.FormCreate(Sender: TObject);
 begin
 
    {Combo box items de tipo de documento}
@@ -163,10 +161,10 @@ begin
   ComboTipoDoc.Items.AddObject('Boleta de venta electronica', TTipoDoc.Create('Boleta de Venta', 20021));
 
    {ComboBox Id medio de generacion}
-  ComboBoxMedioGen.Items.AddObject('Autoimpresiones', ObjIdentificador.create('Autoimpresiones', 1));
-  ComboBoxMedioGen.Items.AddObject('Preimpresos', ObjIdentificador.Create('Preimpresos', 3));
-  ComboBoxMedioGen.Items.AddObject('Comprobantes Virtuales', ObjIdentificador.Create('Comprobantes virtuales', 6));
-  ComboBoxMedioGen.Items.AddObject('Documentos electronicos', ObjIdentificador.Create('Documentos electronicos', 7));
+  ComboBoxMedioGen.Items.AddObject('Autoimpresos', TID.Create('Autoimpreso', 1));
+  ComboBoxMedioGen.Items.AddObject('Preimpresos', TID.Create('Preimpresos', 3));
+  ComboBoxMedioGen.Items.AddObject('Comprobantes Virtuales', TID.Create('Comprobantes virtuales', 6));
+  ComboBoxMedioGen.Items.AddObject('Documentos electronicos', TID.Create('Documentos electronicos', 7));
 end;
 
 end.
