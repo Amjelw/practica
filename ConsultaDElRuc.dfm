@@ -382,6 +382,8 @@ object Form1: TForm1
           Width = 201
           Height = 24
           TabOrder = 1
+          TextHint = 'Tipo de documento'
+          OnChange = ComboTipoDocChange
         end
         object EditNumeroDeTimbrado: TEdit
           Left = 144
@@ -424,11 +426,15 @@ object Form1: TForm1
           TabOrder = 6
         end
         object ComboBoxMedioGen: TComboBox
-          Left = 144
+          Left = 143
           Top = 147
           Width = 201
           Height = 24
+          ImeMode = imClose
+          ParentShowHint = False
+          ShowHint = False
           TabOrder = 7
+          TextHint = 'Medio de generacion'
         end
       end
     end
@@ -460,29 +466,5 @@ object Form1: TForm1
         WordWrap = False
       end
     end
-  end
-  object RESTClient: TRESTClient
-    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
-    AcceptCharset = 'UTF-8, *;q=0.8'
-    AcceptEncoding = 'identity'
-    BaseURL = 'https://servicios.set.gov.py/EsetApiWS'
-    Params = <>
-    HandleRedirects = True
-    Left = 122
-    Top = 229
-  end
-  object RESTRequest1: TRESTRequest
-    Client = RESTClient
-    Params = <>
-    Resource = 'consultaRuc?wsdl'
-    Response = RESTResponse1
-    SynchronizedEvents = False
-    Left = 209
-    Top = 229
-  end
-  object RESTResponse1: TRESTResponse
-    ContentType = 'text/xml'
-    Left = 296
-    Top = 229
   end
 end

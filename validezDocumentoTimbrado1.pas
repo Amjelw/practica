@@ -85,8 +85,14 @@ type
   // ************************************************************************ //
   ValidezDocumentoTimbrado = interface(IInvokable)
   ['{75FC8338-7EA6-1F01-6C0A-C5DFCEF93D72}']
-    function  validezDocumentoTimbrado(const apiKey: string; const ruc: string; const dv: string; const numero_timbrado: string; const tipo_documento: Integer; const numero_documento: string;
-                                       const fecha_expedicion: string ;const medio_generacion: Integer): validezDocumentoResponse; stdcall;
+    function  validezDocumentoTimbrado(const apiKey: string;
+                                       const ruc: string;
+                                       const dv: string;
+                                       const numero_timbrado: string;
+                                       const tipo_documento: Integer;
+                                       const numero_documento: string;
+                                       const fecha_expedicion: string ;
+                                       const medio_generacion: Integer): validezDocumentoResponse; stdcall;
   end;
 
 function GetValidezDocumentoTimbrado(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): ValidezDocumentoTimbrado;

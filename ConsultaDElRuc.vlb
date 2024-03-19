@@ -4,9 +4,6 @@ Coordinates=82,339,55,58
 [GroupBox1]
 Coordinates=231,339,79,58
 
-[RESTResponse1]
-Coordinates=10,10,113,344
-
 [GroupBox2]
 Coordinates=453,416,79,58
 
@@ -20,14 +17,8 @@ Coordinates=10,339,53,58
 [EditIdentificadorDelRuc]
 Coordinates=571,339,150,58
 
-[RESTClient]
-Coordinates=505,10,82,80
-
 [EditNumeroDeRuc]
 Coordinates=226,416,121,58
-
-[RESTRequest1]
-Coordinates=391,10,103,102
 
 [Label1]
 Coordinates=673,10,53,58
@@ -39,7 +30,7 @@ Coordinates=327,339,56,58
 Coordinates=728,339,79,58
 
 []
-Coordinates=235,144,91,36
+Coordinates=391,10,103,102
 
 [EditNumeroDeTimbrado]
 Coordinates=431,493,153,58

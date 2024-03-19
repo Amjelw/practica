@@ -21,7 +21,7 @@ object Form4: TForm4
     Height = 806
     ActiveGroupIndex = 0
     TabOrder = 0
-    View = 12
+    View = 10
     object NavmenuPrincipalGroup1: TdxNavBarGroup
       Caption = 'Financiero'
       SelectedLinkIndex = -1
@@ -46,7 +46,10 @@ object Form4: TForm4
     end
     object NavmenuPrincipalItem1: TdxNavBarItem
       Caption = 'Facturacion'
+      CustomStyles.Item = NavmenuPrincipalStyleItem1
+      CustomStyles.ItemDisabled = NavmenuPrincipalStyleItem1
       CustomStyles.ItemHotTracked = NavmenuPrincipalStyleItem1
+      CustomStyles.ItemPressed = NavmenuPrincipalStyleItem1
       OnClick = NavmenuPrincipalItem1Click
     end
     object NavmenuPrincipalItem2: TdxNavBarItem
