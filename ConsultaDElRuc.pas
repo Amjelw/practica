@@ -47,13 +47,19 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ComboTipoDocChange(Sender: TObject);
+    procedure EditRucTimbradoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditNumeroDeRucKeyPress(Sender: TObject; var Key: Char);
+    procedure EditIdentificadorDelRucKeyPress(Sender: TObject; var Key: Char);
+    procedure EditDvTimbradoKeyPress(Sender: TObject; var Key: Char);
+    procedure EditNumeroDeTimbradoKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
     { Public declarations }
     procedure insercionRuc();
     procedure insertarTimbrado();
-
+    procedure VerifiacionDeTipoDoc();
+    function bloqueador(var Key : Char) : Char;
   end;
 
 
@@ -68,7 +74,6 @@ implementation
 
 
 
-
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
     insercionRuc();
@@ -79,6 +84,38 @@ begin
   insertarTimbrado();
 end;
 
+
+procedure TForm1.ComboTipoDocChange(Sender: TObject);
+begin
+  VerifiacionDeTipoDoc();
+end;
+
+procedure TForm1.EditDvTimbradoKeyPress(Sender: TObject; var Key: Char);
+begin
+  bloqueador(Key);
+end;
+
+procedure TForm1.EditIdentificadorDelRucKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  bloqueador(Key);
+end;
+
+
+procedure TForm1.EditNumeroDeRucKeyPress(Sender: TObject; var Key: Char);
+begin
+  bloqueador(Key);
+end;
+
+procedure TForm1.EditNumeroDeTimbradoKeyPress(Sender: TObject; var Key: Char);
+begin
+  bloqueador(Key);
+end;
+
+procedure TForm1.EditRucTimbradoKeyPress(Sender: TObject; var Key: Char);
+begin
+bloqueador(Key);
+end;
 
 procedure TForm1.insercionRuc;
 var
@@ -127,10 +164,12 @@ begin
                                                         FormatDateTime( 'DD/MM/YYYY', DateExp.Date),
                                                         VIdGen);
 
-  MemoInformacionDeConsultaRuc.Lines.Add(objValidez.estado  + objValidez.codigo + objValidez.mensaje);
+  MemoInformacionDeConsultaRuc.Lines.Add(objValidez.mensaje + '!!');
   objValidez.Free;
 
 end;
+
+
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -162,10 +201,47 @@ begin
   ComboTipoDoc.AddItem('Boleta de venta electronica', TTipoDoc.Create('Boleta de venta electronica', 20021));
 
    {ComboBox Id medio de generacion}
-  ComboBoxMedioGen.AddItem('Autoimpresos', TID.Create('Autoimpreso', 1));
-  ComboBoxMedioGen.AddItem('Preimpresos', TID.Create('Preimpresos', 3));
-  ComboBoxMedioGen.AddItem('Comprobantes Virtuales', TID.Create('Comprobantes virtuales', 6));
-  ComboBoxMedioGen.AddItem('Documentos electronicos', TID.Create('Documentos electronicos', 7));
+
 end;
 
+
+procedure TForm1.VerifiacionDeTipoDoc;
+var VidTipo : Integer;
+begin
+  VIdTipo :=  TTipoDoc(ComboTipoDoc.Items.Objects[ComboTipoDoc.ItemIndex]).IdTipoDeDoc;
+  case VidTipo of
+    1,2,5,6,7,8,9,11,13: begin
+                           ComboBoxMedioGen.Items.Clear;
+                           ComboBoxMedioGen.AddItem('Autoimpresos', TID.Create('Autoimpreso', 1));
+                           ComboBoxMedioGen.AddItem('Preimpresos', TID.Create('Preimpresos', 3));
+
+                         end;
+
+    10,12: begin
+             ComboBoxMedioGen.Items.Clear;
+             ComboBoxMedioGen.AddItem('Autoimpresos', TID.Create('Autoimpreso', 1));
+           end;
+
+    10020: begin
+             ComboBoxMedioGen.Items.Clear;
+             ComboBoxMedioGen.AddItem('Preimpresos', TID.Create('Preimpresos', 3));
+           end;
+    15,16,21,24: begin
+                   ComboBoxMedioGen.Items.Clear;
+                   ComboBoxMedioGen.AddItem('Comprobantes virtuales', TID.Create('Comprobantes virtuales', 6));
+                 end;
+
+    60,5020,22,15020,15021,20020,20021: begin
+                                          ComboBoxMedioGen.Items.Clear;
+                                          ComboBoxMedioGen.AddItem('Documentos electronicos', TID.Create('Comprobantes vrituales', 7));
+                                        end;
+  end;
+
+end;
+
+function TForm1.bloqueador(var Key: Char): Char;
+begin
+  if not(Key in [#8, '0'..'9']) then
+  Key := #0;
+end;
 end.

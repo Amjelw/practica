@@ -66,7 +66,7 @@ object Form1: TForm1
         Left = 15
         Top = 17
         Width = 310
-        Height = 160
+        Height = 133
         Caption = 'RUC'
         Color = clSilver
         Font.Charset = DEFAULT_CHARSET
@@ -110,6 +110,7 @@ object Form1: TForm1
           Width = 129
           Height = 21
           TabOrder = 0
+          OnKeyPress = EditNumeroDeRucKeyPress
         end
         object EditIdentificadorDelRuc: TEdit
           Left = 249
@@ -117,10 +118,11 @@ object Form1: TForm1
           Width = 48
           Height = 21
           TabOrder = 1
+          OnKeyPress = EditIdentificadorDelRucKeyPress
         end
         object BitBtn1: TBitBtn
-          Left = 0
-          Top = 113
+          Left = 3
+          Top = 81
           Width = 306
           Height = 38
           Align = alCustom
@@ -381,6 +383,7 @@ object Form1: TForm1
           Top = 87
           Width = 201
           Height = 24
+          Style = csDropDownList
           TabOrder = 1
           TextHint = 'Tipo de documento'
           OnChange = ComboTipoDocChange
@@ -391,6 +394,7 @@ object Form1: TForm1
           Width = 201
           Height = 24
           TabOrder = 2
+          OnKeyPress = EditNumeroDeTimbradoKeyPress
         end
         object DateExp: TDateTimePicker
           Left = 144
@@ -417,6 +421,7 @@ object Form1: TForm1
           Width = 137
           Height = 24
           TabOrder = 5
+          OnKeyPress = EditRucTimbradoKeyPress
         end
         object EditDvTimbrado: TEdit
           Left = 286
@@ -424,12 +429,14 @@ object Form1: TForm1
           Width = 57
           Height = 24
           TabOrder = 6
+          OnKeyPress = EditDvTimbradoKeyPress
         end
         object ComboBoxMedioGen: TComboBox
           Left = 143
           Top = 147
           Width = 201
           Height = 24
+          Style = csDropDownList
           ImeMode = imClose
           ParentShowHint = False
           ShowHint = False
@@ -439,7 +446,7 @@ object Form1: TForm1
       end
     end
     object GroupBox3: TGroupBox
-      Left = 15
+      Left = 8
       Top = 303
       Width = 818
       Height = 330
