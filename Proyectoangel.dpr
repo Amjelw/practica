@@ -9,7 +9,8 @@ uses
   ConsultaDElRuc in 'ConsultaDElRuc.pas',
   validezDocumentoTimbrado1 in 'validezDocumentoTimbrado1.pas',
   UItemsCbx in 'UItemsCbx.pas',
-  Indentificador in 'Indentificador.pas';
+  Indentificador in 'Indentificador.pas',
+  RegistrosID in 'RegistrosID.pas';
 
 {$R *.res}
 

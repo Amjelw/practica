@@ -1,0 +1,24 @@
+unit RegistrosID;
+
+interface
+//uses
+type
+  T_registros =  record
+    Numero_id : Integer;
+    Nombre_Id : String;
+    constructor recordDatos();
+  end;
+  T_vector : array[1..n] of T_registros;
+implementation
+
+{ T_registros }
+
+constructor T_registros.recordDatos;
+var vcc : T_vector;
+begin
+  vcc[1].Numero_id := 12;
+  vcc[1].Nombre_Id := 'Facturacion';
+  Writeln(vcc[1].Numero_id);
+end;
+
+end.

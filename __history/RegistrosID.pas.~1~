@@ -1,0 +1,11 @@
+unit RegistrosID;
+
+interface
+type
+  T_registrosClass  = class
+    private
+    public
+  end;
+implementation
+
+end.

@@ -11,7 +11,7 @@ uses
   Soap.SOAPHTTPClient, IPPeerClient, Data.Bind.Components,
   Data.Bind.ObjectScope, REST.Client, System.Rtti, System.Bindings.Outputs,
   Vcl.Bind.Editors, Data.Bind.EngExt, Vcl.Bind.DBEngExt, consultaRuc1 , validezDocumentoTimbrado1,
-  Vcl.Mask,UItemsCbx, Indentificador ;
+  Vcl.Mask,UItemsCbx, Indentificador, RegistrosID ;
 
 type
   TForm1 = class(TForm)
@@ -43,15 +43,13 @@ type
     Label10: TLabel;
     Label11: TLabel;
     ComboBoxMedioGen: TComboBox;
+    Button1: TButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ComboTipoDocChange(Sender: TObject);
-    procedure EditRucTimbradoKeyPress(Sender: TObject; var Key: Char);
-    procedure EditNumeroDeRucKeyPress(Sender: TObject; var Key: Char);
-    procedure EditIdentificadorDelRucKeyPress(Sender: TObject; var Key: Char);
-    procedure EditDvTimbradoKeyPress(Sender: TObject; var Key: Char);
-    procedure EditNumeroDeTimbradoKeyPress(Sender: TObject; var Key: Char);
+    procedure Button1Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -59,7 +57,8 @@ type
     procedure insercionRuc();
     procedure insertarTimbrado();
     procedure VerifiacionDeTipoDoc();
-    function bloqueador(var Key : Char) : Char;
+    procedure cositas();
+
   end;
 
 
@@ -85,37 +84,17 @@ begin
 end;
 
 
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  cositas();
+end;
+
 procedure TForm1.ComboTipoDocChange(Sender: TObject);
 begin
   VerifiacionDeTipoDoc();
 end;
 
-procedure TForm1.EditDvTimbradoKeyPress(Sender: TObject; var Key: Char);
-begin
-  bloqueador(Key);
-end;
 
-procedure TForm1.EditIdentificadorDelRucKeyPress(Sender: TObject;
-  var Key: Char);
-begin
-  bloqueador(Key);
-end;
-
-
-procedure TForm1.EditNumeroDeRucKeyPress(Sender: TObject; var Key: Char);
-begin
-  bloqueador(Key);
-end;
-
-procedure TForm1.EditNumeroDeTimbradoKeyPress(Sender: TObject; var Key: Char);
-begin
-  bloqueador(Key);
-end;
-
-procedure TForm1.EditRucTimbradoKeyPress(Sender: TObject; var Key: Char);
-begin
-bloqueador(Key);
-end;
 
 procedure TForm1.insercionRuc;
 var
@@ -239,9 +218,10 @@ begin
 
 end;
 
-function TForm1.bloqueador(var Key: Char): Char;
+procedure TForm1.cositas;
+var
+  dd : Tregistro;
 begin
-  if not(Key in [#8, '0'..'9']) then
-  Key := #0;
+  dd.ValidarTipoDocYmedioGen();
 end;
 end.

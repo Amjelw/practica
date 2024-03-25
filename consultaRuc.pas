@@ -192,7 +192,7 @@ type
   // binding   : ConsultaRucPortSoapBinding
   // service   : ConsultaRucPort
   // port      : ConsultaRucPort
-  // URL       : http://servicios.set.gov.py/servicios-proxy-consulta-publica/EsetApiWS/consultaRuc
+  // URL       : http://servicios.set.gov.py/s.ervicios-proxy-consulta-publica/EsetApiWS/consultaRuc
   // ************************************************************************ //
   ConsultaRuc = interface(IInvokable)
   ['{C4FE5A45-4A7E-A80F-8164-BD6FF2D5CA18}']
